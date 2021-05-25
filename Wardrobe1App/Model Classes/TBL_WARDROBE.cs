@@ -15,6 +15,8 @@ namespace Wardrobe1App
 
         public string Size { get; set; }
 
+        public string Color { get; set; }
+
         public DateTime? LastWorn { get; set; }
     }
 }

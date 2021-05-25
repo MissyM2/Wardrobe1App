@@ -22,6 +22,13 @@ namespace Wardrobe1App
         UIView headerView;
         UITableView table;
 
+        // passing a variable
+        // declare a public variable: TestVar
+        // get/set
+        // where I call the view (My
+        public string rptName { get; set; }
+        public string rptDesc { get; set; }
+
         SqliteCipherHelper databaseHelper;
 
         UILabel titleLbl, subtitleLbl;
@@ -42,7 +49,7 @@ namespace Wardrobe1App
         {
             base.ViewDidLoad();
            
-            CreateScreenLayout();
+            AddScreenLayout();
         }
 
         public override void DidReceiveMemoryWarning()
@@ -51,24 +58,25 @@ namespace Wardrobe1App
         }
 
         
-        public void CreateScreenLayout()
+        public void AddScreenLayout()
         {
+            Console.WriteLine("rptName/Desc:" + rptName + rptDesc);
 
             headerView = new UIView(new CGRect(0, 20, w, 100));
             headerView.Layer.BorderWidth = 0;
 
             // create title and subtitle
-            titleLbl = new UILabel(new CGRect(40, 40, w - 80, 22));
+            titleLbl = new UILabel(new CGRect(40, 60, w - 80, 22));
             titleLbl.BackgroundColor = UIColor.Clear;
             titleLbl.Font = UIFont.BoldSystemFontOfSize(18);
-            titleLbl.Text = "My Wardrobe";
+            titleLbl.Text = rptName;
             titleLbl.TextAlignment = UITextAlignment.Center;
             headerView.Add(titleLbl);
 
-            subtitleLbl = new UILabel(new CGRect(40, 60, w - 80, 22));
+            subtitleLbl = new UILabel(new CGRect(25, 80, w - 50, 22));
             subtitleLbl.BackgroundColor = UIColor.Clear;
             subtitleLbl.Font = UIFont.BoldSystemFontOfSize(14);
-            subtitleLbl.Text = "all items in your current wardrobe.";
+            subtitleLbl.Text = rptDesc;
             subtitleLbl.TextAlignment = UITextAlignment.Center;
             headerView.Add(subtitleLbl);
 

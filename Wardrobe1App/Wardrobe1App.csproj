@@ -46,8 +46,10 @@
         <WarningLevel>4</WarningLevel>
         <MtouchArch>ARM64</MtouchArch>
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-        <CodesignKey>iPhone Developer</CodesignKey>
+        <CodesignKey>iPhone Distribution: Westat, Inc. (ent)</CodesignKey>
         <MtouchDebug>true</MtouchDebug>
+        <CodesignProvision>mFOS Library</CodesignProvision>
+        <MtouchLink>SdkOnly</MtouchLink>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
         <DebugType>none</DebugType>
@@ -58,6 +60,7 @@
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
         <MtouchArch>ARM64</MtouchArch>
         <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchLink>SdkOnly</MtouchLink>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="System" />
@@ -126,6 +129,7 @@
         <Folder Include="Model Classes\" />
         <Folder Include="Reports\" />
         <Folder Include="Wardrobe\" />
+        <Folder Include="AddItem\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="Supporting Files\NavigationBarController.xib" />
@@ -133,6 +137,10 @@
         <InterfaceDefinition Include="Wardrobe\MyWardrobeViewController.xib" />
         <InterfaceDefinition Include="Supporting Files\TabPlusController.xib" />
         <InterfaceDefinition Include="Supporting Files\AlertViewController.xib" />
+        <InterfaceDefinition Include="AddItem\AddItemViewController.xib" />
+        <InterfaceDefinition Include="AddItem\AddItemDetailsViewController.xib" />
+        <InterfaceDefinition Include="AddItem\AddLastWornViewController.xib" />
+        <InterfaceDefinition Include="AddItem\AddSaveItemViewController.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -167,6 +175,22 @@
         <Compile Include="Supporting Files\AlertViewController.cs" />
         <Compile Include="Supporting Files\AlertViewController.designer.cs">
           <DependentUpon>AlertViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AddItem\AddItemViewController.cs" />
+        <Compile Include="AddItem\AddItemViewController.designer.cs">
+          <DependentUpon>AddItemViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AddItem\AddItemDetailsViewController.cs" />
+        <Compile Include="AddItem\AddItemDetailsViewController.designer.cs">
+          <DependentUpon>AddItemDetailsViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AddItem\AddLastWornViewController.cs" />
+        <Compile Include="AddItem\AddLastWornViewController.designer.cs">
+          <DependentUpon>AddLastWornViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="AddItem\AddSaveItemViewController.cs" />
+        <Compile Include="AddItem\AddSaveItemViewController.designer.cs">
+          <DependentUpon>AddSaveItemViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

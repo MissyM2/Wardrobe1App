@@ -5,11 +5,17 @@
 // Manual changes to this file will not be maintained.
 //
 using Foundation;
+using System;
+using System.CodeDom.Compiler;
+using UIKit;
 
 namespace Wardrobe1App
 {
-    [Register("MyReportsViewController")]
-    partial class MyReportsViewController
+    [Register("AddItemViewController")]
+    partial class AddItemViewController
     {
+        void ReleaseDesignerOutlets()
+        {
+        }
     }
 }

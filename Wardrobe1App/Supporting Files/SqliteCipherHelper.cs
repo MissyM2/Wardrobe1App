@@ -93,8 +93,8 @@ namespace Wardrobe1App
         public void PopulateReports()
         {
             DeleteAllFromTblReports();
-            var row1 = new TBL_REPORTS { ReportName = "DelWar", ReportDesc = "Delete all items in your wardrobe." };
-            var row2 = new TBL_REPORTS { ReportName = "Show All", ReportDesc = "Show entire wardrobe." };
+            var row1 = new TBL_REPORTS { ReportName = "Delete Wardrobe", ReportDesc = "Delete all items in your wardrobe." };
+            var row2 = new TBL_REPORTS { ReportName = "My Wardrobe", ReportDesc = "All items in your current wardrobe are shown." };
             var row3 = new TBL_REPORTS { ReportName = "query3", ReportDesc = "This is desc for q3" };
             var row4 = new TBL_REPORTS { ReportName = "query4", ReportDesc = "This is desc for q4" };
             

@@ -52,19 +52,15 @@ namespace Wardrobe1App
         public TabController getTabBar()
         {
 
-            //tab 1: My Wardrobe
-            // this is the simplest implementation:  add a view controller to tabbar
-            //vcMyWardrobe = new UIViewController();
+            // tab 1: Add Item to Wardrobe
+            var vcAddItem = new AddItemViewController();
+            NavigationBarController nbcAddItem = new NavigationBarController();
+            UINavigationController ncAddItem = nbcAddItem.GetNavigationController(vcAddItem);
 
-            // the next levelis to create a separate view controller, which is either
-            // a view controller or a navigation view controller which manages a stack of views
-            var vcMyWardrobe = new MyWardrobeViewController();
-            NavigationBarController nbcMyWardrobe = new NavigationBarController();
-            UINavigationController ncMyWardrobe = nbcMyWardrobe.GetNavigationController(vcMyWardrobe);
+            vcAddItem.Title = "Add Wardrobe Item";
+            vcAddItem.View.BackgroundColor = UIColor.Green;
 
-            vcMyWardrobe.Title = "My Wardrobe";
-            vcMyWardrobe.View.BackgroundColor = UIColor.Green;
-
+            // tab 2: View Reports
             var vcMyReports = new MyReportsViewController();
             NavigationBarController nbcMyReports = new NavigationBarController();
             UINavigationController ncMyReports = nbcMyReports.GetNavigationController(vcMyReports);
@@ -73,8 +69,8 @@ namespace Wardrobe1App
             vcMyReports.View.BackgroundColor = UIColor.Orange;
 
             TabController tabController = new TabController();
-            tabController.AddChildViewController(vcMyWardrobe);
-            tabController.AddChildViewController(vcMyReports);
+            tabController.AddChildViewController(ncAddItem);
+            tabController.AddChildViewController(ncMyReports);
 
             return tabController;
         }
